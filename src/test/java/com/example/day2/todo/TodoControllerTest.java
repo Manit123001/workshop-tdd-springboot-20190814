@@ -19,16 +19,24 @@ public class TodoControllerTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
+    @Autowired
+    private TaskRepository taskRepository;
+
     @Test
     public void success_with_getAll() {
+
+        // Arrange
+        taskRepository.deleteAll();
+        taskRepository.save(new Task("Task 1"));
+        taskRepository.save(new Task("Task 2"));
 
         TaskResponseList body = this.restTemplate.getForObject(
                 "/todos",
                 TaskResponseList.class);
 
         assertThat(body.getResults().size()).isEqualTo(2);
-        assertThat(body.getResults().get(0).getId()).isEqualTo(1);
         assertThat(body.getResults().get(0).getName()).isEqualTo("Task 1");
 
+        taskRepository.deleteAll();
     }
 }
