@@ -13,6 +13,13 @@ public class Task {
 
     private String name;
 
+    public Task() {
+    }
+
+    public Task(String name) {
+        this.name = name;
+    }
+
     public int getId() {
         return id;
     }
