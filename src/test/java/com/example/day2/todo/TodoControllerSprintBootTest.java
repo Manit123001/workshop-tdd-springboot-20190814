@@ -15,7 +15,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest(webEnvironment = WebEnvironment.RANDOM_PORT)
-public class TodoControllerTest {
+public class TodoControllerSprintBootTest {
     @Autowired
     private TestRestTemplate restTemplate;
 
