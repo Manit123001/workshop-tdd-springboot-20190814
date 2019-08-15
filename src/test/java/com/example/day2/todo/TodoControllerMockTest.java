@@ -28,6 +28,9 @@ public class TodoControllerMockTest {
     @MockBean
     private TodoService todoService;
 
+    @MockBean
+    private PostGateway postGateway;
+
     @Test
     public  void success_with_getAll() throws Exception {
         // Arrange
